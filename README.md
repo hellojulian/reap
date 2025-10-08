@@ -1,50 +1,150 @@
-# Welcome to your Expo app 👋
+![Reap Banner](https://github.com/hellojulian/reap/blob/main/banner.png?raw=true)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Reap - Mobile Prototype
 
-## Get started
+## Features
 
-1. Install dependencies
+- 🌓 **Light/Dark Theme Toggle** - Global theme management with persistent storage
+- 🎨 **Component Library** - Comprehensive UI components with accessibility support
+- 📱 **Mobile-First Design** - Optimized for iOS and Android
+- ♿ **Accessibility** - WCAG 2.1 AA compliant components
+- 🎯 **TypeScript** - Fully typed codebase
+- 🔄 **State Management** - React Context for theme management
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- **React Native** - Mobile app framework
+- **Expo** - Development platform and build tools
+- **TypeScript** - Type safety and developer experience
+- **React Navigation** - Navigation and routing
+- **NativeWind** - Utility-first styling
+- **Lucide React Native** - Beautiful icons
 
-   ```bash
-   npx expo start
-   ```
+## Getting Started
 
-In the output, you'll find options to open the app in a
+### Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js 18+ 
+- npm or yarn
+- Expo CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Installation
 
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/reap.git
+cd reap
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run on your preferred platform:
+```bash
+# iOS
+npx expo start --ios
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Project Structure
 
-## Join the community
+```
+├── app/                    # App Router screens
+│   ├── (tabs)/            # Tab navigation screens
+│   │   ├── index.tsx      # Home screen
+│   │   └── explore.tsx    # Button showcase screen
+│   └── _layout.tsx        # Root layout with theme provider
+├── components/            # Reusable UI components
+│   ├── ui/               # Core UI components
+│   │   ├── button.tsx    # Accessible button component
+│   │   ├── card.tsx      # Card component
+│   │   └── text.tsx      # Typography component
+│   └── screens/          # Screen-level components
+├── contexts/             # React Context providers
+│   └── theme-context.tsx # Global theme management
+├── hooks/                # Custom React hooks
+│   └── use-tokens.ts     # Theme token hooks
+├── constants/            # App constants
+│   └── tokens.ts         # Design system tokens
+└── assets/               # Static assets
+    └── images/           # Image assets
+```
 
-Join our community of developers creating universal apps.
+## Components
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Button Component
+
+Fully accessible button with multiple variants:
+
+```tsx
+import { Button } from '@/components/ui/button';
+
+<Button 
+  variant="primary" 
+  size="large"
+  label="Get Started"
+  onPress={() => console.log('Pressed')}
+/>
+```
+
+**Variants:** `primary`, `secondary`, `link`  
+**Sizes:** `default`, `large`  
+**States:** `loading`, `disabled`, `pressed`, `focus`
+
+### Theme System
+
+Global theme management with light/dark mode support:
+
+```tsx
+import { useTheme } from '@/contexts/theme-context';
+
+const { isDark, toggleTheme, actualTheme } = useTheme();
+```
+
+## Design System
+
+The app uses a comprehensive design token system for consistent styling:
+
+- **Colors**: Light and dark theme variants
+- **Typography**: Plus Jakarta Sans font family  
+- **Spacing**: Consistent spacing scale
+- **Radius**: Border radius tokens
+
+## Accessibility
+
+All components are built with accessibility in mind:
+
+- ✅ WCAG 2.1 AA compliance
+- ✅ Screen reader support (VoiceOver/TalkBack)
+- ✅ Proper focus management
+- ✅ Adequate touch targets (48px minimum)
+- ✅ Haptic feedback
+- ✅ High contrast support
+
+## Scripts
+
+- `npm start` - Start Expo development server
+- `npm run ios` - Run on iOS simulator
+- `npm run android` - Run on Android emulator  
+- `npm run web` - Run on web browser
+- `npm run reset-project` - Reset to clean Expo project
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.

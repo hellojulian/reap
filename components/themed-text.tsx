@@ -28,6 +28,8 @@ export function ThemedText({
         type === 'link' ? styles.link : undefined,
         style,
       ]}
+      allowFontScaling={false}
+      maxFontSizeMultiplier={1.0}
       {...rest}
     />
   );
