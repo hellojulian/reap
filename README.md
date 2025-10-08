@@ -1,6 +1,6 @@
-![Reap Banner](https://github.com/hellojulian/reap/blob/main/banner.png?raw=true)
+# Reap - React Native Mobile App
 
-# Reap - Mobile Prototype
+A modern React Native mobile application with theme switching, component library, and responsive design.
 
 ## Features
 
@@ -51,7 +51,13 @@ npm start
 4. Run on your preferred platform:
 ```bash
 # iOS
-npx expo start --ios
+npm run ios
+
+# Android  
+npm run android
+
+# Web
+npm run web
 ```
 
 ## Project Structure
